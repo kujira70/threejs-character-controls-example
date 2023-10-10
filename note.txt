@@ -1,0 +1,70 @@
+PS C:\codes\JS\threejs-character-controls-example> npm audit fix 
+
+added 18 packages, removed 17 packages, changed 89 packages, and audited 598 packages in 26s
+
+52 packages are looking for funding
+  run `npm fund` for details
+
+# npm audit report
+
+glob-parent  <5.1.2
+Severity: high
+glob-parent before 5.1.2 vulnerable to Regular Expression Denial of Service in enclosure regex - https://github.com/advisories/GHSA-ww39-953v-wcq6   
+fix available via `npm audit fix --force`
+Will install webpack-dev-server@4.15.1, which is a breaking change
+node_modules/glob-parent
+  chokidar  1.0.0-rc1 - 2.1.8
+  Depends on vulnerable versions of glob-parent
+  node_modules/chokidar
+    webpack-dev-server  2.0.0-beta - 4.7.2
+    Depends on vulnerable versions of chokidar
+    Depends on vulnerable versions of selfsigned
+    node_modules/webpack-dev-server
+
+node-forge  <=1.2.1
+Severity: high
+Prototype Pollution in node-forge debug API. - https://github.com/advisories/GHSA-5rrq-pxf6-6jx5
+URL parsing in node-forge could lead to undesired behavior. - https://github.com/advisories/GHSA-gf8q-jrpm-jvxq
+Improper Verification of Cryptographic Signature in `node-forge` - https://github.com/advisories/GHSA-2r2c-g63r-vccr
+Improper Verification of Cryptographic Signature in node-forge - https://github.com/advisories/GHSA-cfm4-qjh2-4765
+Improper Verification of Cryptographic Signature in node-forge - https://github.com/advisories/GHSA-x4jg-mjrx-434g
+Open Redirect in node-forge - https://github.com/advisories/GHSA-8fr3-hfg3-gpgp
+fix available via `npm audit fix --force`
+Will install webpack-dev-server@4.15.1, which is a breaking change
+node_modules/node-forge
+  selfsigned  1.1.1 - 1.10.14
+  Depends on vulnerable versions of node-forge
+  node_modules/selfsigned
+
+5 vulnerabilities (1 low, 4 high)
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+PS C:\codes\JS\threejs-character-controls-example> npm run start
+
+> threejs-example@1.0.0 start
+> npm run build && npm run serve
+
+
+> threejs-example@1.0.0 build
+> webpack
+
+asset index.js 3.4 MiB [emitted] (name: main)
+runtime modules 670 bytes 3 modules
+cacheable modules 1.24 MiB
+  modules by path ./src/*.ts 12.4 KiB
+    ./src/index.ts 5.03 KiB [built] [code generated]
+    ./src/utils.ts 2.41 KiB [built] [code generated]
+    ./src/characterControls.ts 4.96 KiB [built] [code generated]
+  modules by path ./node_modules/three/ 1.23 MiB
+    ./node_modules/three/build/three.module.js 1.11 MiB [built] [code generated]
+    ./node_modules/three/examples/jsm/controls/OrbitControls.js 25.5 KiB [built] [code generated]
+    ./node_modules/three/examples/jsm/loaders/GLTFLoader.js 98 KiB [built] [code generated]
+webpack 5.88.2 compiled successfully in 7863 ms
+
+> threejs-example@1.0.0 serve
+> webpack serve
+
+i ｢wds｣: Project is running at http://localhost:8080/
+i ｢wds｣: webpack output is served from /
+i ｢wds｣: Content not from webpack is served from C:\codes\JS\threejs-character-controls-example\src

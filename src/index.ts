@@ -1,4 +1,4 @@
-import { KeyDisplay } from './utils';
+import { KeyDisplay } from './characterControlsUtils';
 import { CharacterControls } from './characterControls';
 import * as THREE from 'three'
 import { CameraHelper } from 'three';
@@ -21,6 +21,13 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.setPixelRatio(window.devicePixelRatio);
 renderer.shadowMap.enabled = true
 
+// TORUS kw
+const torus_geometory = new THREE.TorusGeometry( 10, 3, 6, 20 );
+const torus_material = new THREE.MeshStandardMaterial({ color: 0xFF6347 });
+// const material = new THREE.MeshBasicMaterial( { color: 0xFF6347, wireframe: true } );
+const torus = new THREE.Mesh( torus_geometory, torus_material );
+scene.add(torus);
+
 // CONTROLS
 const orbitControls = new OrbitControls(camera, renderer.domElement);
 orbitControls.enableDamping = true
@@ -34,7 +41,7 @@ orbitControls.update();
 light()
 
 // FLOOR
-generateFloor()
+// generateFloor()
 
 // MODEL WITH ANIMATIONS
 var characterControls: CharacterControls
@@ -74,13 +81,13 @@ document.addEventListener('keyup', (event) => {
 const clock = new THREE.Clock();
 // ANIMATE
 function animate() {
-    let mixerUpdateDelta = clock.getDelta();
-    if (characterControls) {
-        characterControls.update(mixerUpdateDelta, keysPressed);
-    }
-    orbitControls.update()
-    renderer.render(scene, camera);
-    requestAnimationFrame(animate);
+    // let mixerUpdateDelta = clock.getDelta();
+    // if (characterControls) {
+    //     characterControls.update(mixerUpdateDelta, keysPressed);
+    // }
+    // orbitControls.update()
+    // renderer.render(scene, camera);
+    // requestAnimationFrame(animate);
 }
 document.body.appendChild(renderer.domElement);
 animate();
